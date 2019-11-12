@@ -1,3 +1,4 @@
+  
 //
 //  main.c
 //  Operazioni tra matrici
@@ -10,19 +11,17 @@
 #include <math.h>
 
 void somma(int mat1[10][10], int mat2[10][10], int matsom[10][10], int lato);
+void prod(int mat1[10][10], int mat2[10][10], int matprod[10][10], int lato);
+int det(int mat[10][10], int lato);
 
 int main() {
-    int n, nn, i = 0, j = 0;
-    
-    printf("Inserisci il lato delle matrici quadrate che vuoi sommare : ");
-    scanf("%d", &n);
-    
-    nn = n * n - 1 ;
-    
+    size_t n, i = 0, j = 0;
     int mat1[10][10] = {0};
     int mat2[10][10] = {0};
 	int matsom[10][10] = {0};
-
+    
+	printf("Inserisci il lato delle matrici quadrate che vuoi sommare : ");
+    scanf("%d", &n);
 	
 	puts("Prima matrice : ");
 	//Inserisco i valori della prima matrice
@@ -67,7 +66,7 @@ int main() {
 	//Stampo la seconda matrice
 	for ( i = 0 ; i < n ; i++) {
 		
-		for ( j = 0 ; j < n ; j++ ) printf("%3d", mat1[i][j]);
+		for ( j = 0 ; j < n ; j++ ) printf("%3d", mat2[i][j]);
 		
 		puts("");
 		
@@ -87,6 +86,8 @@ int main() {
 		puts("");
 		
     }
+    
+    return 0;
 }
 
 void somma(int mat1[10][10], int mat2[10][10], int mat3[10][10], int n) {
